@@ -1,9 +1,10 @@
-import express from 'express';
+const outpassReducer = (state = {data:null}, action) => {
+    switch (action.type) {
+        case 'PASS':
+            return{ ...state }
+        default:
+            return state;
+    }
+}
 
-import { createOutpass } from '../controllers/outpass.js'
-
-const router = express.Router();
-
-router.post('/submit', createOutpass)
-
-export default router
+export default outpassReducer

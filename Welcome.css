@@ -1,0 +1,64 @@
+.home{
+    height: 100vh;
+    width: 100%;
+}
+
+.image{
+    height: 100%;
+    background-image: url('../../Assets/srmap-paari.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* filter: blur(4px) brightness(25%); */
+}
+
+.text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 80%;
+    padding: 20px;
+    text-align: center;
+}
+
+.text h1{
+    color: rgb(0, 0, 0);
+    font-size: 50px;
+    padding-bottom: 250px;
+}
+
+/* .text h2{
+    color: rgb(16, 17, 17);
+    font-size: 50px;
+    font-style: oblique;
+    font-weight: normal;
+} */
+
+.user{
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 50px;
+}
+
+.who{
+    border: solid #0a0008;
+    background-color: honeydew;
+    color: #010e0e;
+    border-radius: 8px;
+    padding: 40px 100px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.who p{
+    font-size: 30px;
+}
+
+.who:hover{
+    cursor: pointer;
+    background-color: antiquewhite;
+    color: black;
+    transition: 0.3s;
+    transform: scale(1.05);
+}

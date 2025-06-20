@@ -1,16 +1,18 @@
-import express from 'express';
+const outpassMovementReducer = (state = {data:null}, action) => {
+    switch (action.type) {
+        case 'FETCH_APPLIED_OUTPASSES':
+            return { ...state, data: action.payload }
+        case 'FETCH-OUTPASS-DETAILS':
+            return { ...state, data: action.payload }
+        case 'FETCH_PREV_OUTPASSES':
+            return { ...state, data: action.payload }
+        case 'MOVE_APPROVED_OUTPASS':
+            return { ...state, data: action.payload }
+        case 'MOVE_REJECTED_OUTPASS':
+            return { ...state, data: action.payload }
+        default:
+            return state;
+    }
+}
 
-import { postAppliedOutpasses, sendOutpassDetails, showWardenPendingOutpasses, approveOutpasses, rejectOutpasses, showWardenPreviousOutpasses, sendPrevOutpassDetails, showPrevOutpasses } from '../controllers/outpassMovement.js';
-
-const router = express.Router();
-
-router.post('/post', postAppliedOutpasses)
-router.post('/send-details', sendOutpassDetails)
-router.post('/show-warden-pending', showWardenPendingOutpasses)
-router.post('/approve', approveOutpasses)
-router.post('/reject', rejectOutpasses)
-router.post('/show-prev', showWardenPreviousOutpasses)
-router.post('/send-prev-details', sendPrevOutpassDetails)
-router.post('/show-prev-student', showPrevOutpasses)
-
-export default router
+export default outpassMovementReducer

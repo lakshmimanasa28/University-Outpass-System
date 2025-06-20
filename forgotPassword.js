@@ -1,13 +1,14 @@
-import express from 'express';
-import { sendStudentOtp, sendWardenOtp, verifyStudentOtp, verifyWardenOtp, changeStudentPass, changeWardenPass} from '../controllers/ForgotPassword.js';
+const forgotPassReducer = (state = {data:null}, action) => {
+    switch (action.type) {
+        case 'SEND':
+            return { ...state, data: action.payload }
+        case 'VERIFY':
+            return { ...state, data: action.payload }
+        case 'CHANGE-PASS':
+            return { ...state, data: action.payload }
+        default:
+            return state;
+    }
+}
 
-const router = express.Router();
-
-router.post('/send-student-otp', sendStudentOtp)
-router.post('/send-warden-otp', sendWardenOtp)
-router.post('/verify-student-otp', verifyStudentOtp)
-router.post('/verify-warden-otp', verifyWardenOtp)
-router.post('/change-student-pass', changeStudentPass)
-router.post('/change-warden-pass', changeWardenPass)
-
-export default router
+export default forgotPassReducer
